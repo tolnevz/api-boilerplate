@@ -27,20 +27,43 @@
 </script>
 
 <template>
-  <div>
-    <h1>Login Page</h1>
-    <div>
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" v-model="email" />
-      <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" v-model="password" />
-      </div>
-      <div>
-        <input type="submit" value="Login" @click="login" />
+  <div class="container">
+    <div class="login">
+      <h1>Login Page</h1>
+      <div class="form">
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" v-model="email" />
+        </div>
+        <div class="form-field">
+          <label for="password">Пароль</label>
+          <input type="password" name="password" id="password" v-model="password" />
+        </div>
+        <input class="btn" type="submit" value="Войти" @click="login" />
       </div>
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+  .login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+
+    .form {
+      width: 300px;
+
+      @media screen and (max-width: 500px) {
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+  }
+</style>

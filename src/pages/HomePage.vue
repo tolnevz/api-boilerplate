@@ -13,12 +13,12 @@
 
   onMounted(async () => {
     await getTemplatesData();
-    await store.getTags();
   });
 
   const getTemplatesData = async () => {
     const filters = selectedTag.value.length ? { 'filter[tags]': selectedTag.value.toString() } : {};
     await store.getTemplates(filters);
+    await store.getTags();
   };
 
   const view = (id: any) => {
